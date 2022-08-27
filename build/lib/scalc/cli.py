@@ -23,7 +23,7 @@ def main(
   IP_address_per_subnet: int = int(math.pow(2, host_id_bits - borrowed_bits))
   subnets_needed: int = int(math.pow(2, borrowed_bits))
 
-  # TODO: Possibly move these to an error checking function?
+  # TODO: Possibly move to an error checking function?
   if output_format not in __settings__.output_settings['supported_output_formats']:
     raise typer.BadParameter('Unsupported output format.')
   else:

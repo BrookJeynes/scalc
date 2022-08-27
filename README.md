@@ -42,12 +42,12 @@
     | 4 | `193.64.33.192` | `/26` | `193.64.33.193` | `193.64.33.254` | `193.64.33.255` |
 
 ## Current features:
-- Subnet /24 notation
+- Subnet /24 notation IP address
 - Generate markdown tables of subnet information
 - ...
 
 ## Planned features:
-- Subnet other notations e.g. /25, /16
+- Subnet other IP address notations e.g. /25, /16
 - ...
 
 ## Contribution

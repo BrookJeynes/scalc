@@ -22,16 +22,17 @@
 
     Usage: scalc [OPTIONS] IP_ADDRESS
 
-    ╭─ Arguments ────────────────────────────────────────────────────────────────────────╮
-    │ *    ip_address      TEXT  IP address. [default: None] [required]                  │
-    ╰────────────────────────────────────────────────────────────────────────────────────╯
-    ╭─ Options ──────────────────────────────────────────────────────────────────────────╮
-    │ --version         -v                 Show version.                                 │ 
-    │ --slash-notation  -sn       INTEGER  Slash notation. [default: 24]                 │
-    │ --subnets         -s        INTEGER  Number of subnets. [default: 2]               │
-    │ --host-id-bits    -hid      INTEGER  Number of host id bits. [default: 8]          │
-    │ --help                               Show this message and exit.                   │
-    ╰────────────────────────────────────────────────────────────────────────────────────╯
+    ╭─ Arguments ──────────────────────────────────────────────────────────────────────────────────────────────╮
+    │ *    ip_address      TEXT  IP address. [default: None] [required]                                        │
+    ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+    ╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────╮
+    │ --version         -v                 Show version.                                                       │ 
+    │ --slash-notation  -sn       INTEGER  Slash notation. [default: 24]                                       │
+    │ --subnets         -s        INTEGER  Number of subnets. [default: 2]                                     │
+    │ --host-id-bits    -hid      INTEGER  Number of host id bits. [default: 8]                                │
+    │ --output-format   -of       TEXT     Output format. Supported formats: terminal [default: terminal]      │
+    │ --help                               Show this message and exit.                                         │
+    ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
     ```
 4. Example output for `scalc 193.64.33.0 -s 4`:
     | Subnet | Network Address | Slash Notation | First Usable IP Address | Last Usable IP Address | Broadcast Address |
@@ -48,6 +49,7 @@
 
 ## Planned features:
 - Subnet other IP address notations e.g. /25, /16
+- Export subnet information to files
 - ...
 
 ## Contribution

@@ -51,4 +51,4 @@
 - ...
 
 ## Contribution
-Feel free to create a pull request and add some new features or clean up the code (I know it's a bet messy). Any help is appreciated.
+Feel free to create a pull request and add some new features or create an issue and I'll see to it when I can. Any help is appreciated.

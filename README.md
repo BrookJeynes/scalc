@@ -27,9 +27,8 @@
     ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
     ╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────╮
     │ --version         -v                 Show version.                                                       │ 
-    │ --slash-notation  -sn       INTEGER  Slash notation. [default: 24]                                       │
+    │ --slash-notation  -sn       INTEGER  Slash notation. Overrides --subnets. [default: 24]           │
     │ --subnets         -s        INTEGER  Number of subnets. [default: 2]                                     │
-    │ --host-id-bits    -hid      INTEGER  Number of host id bits. [default: 8]                                │
     │ --output-format   -of       TEXT     Output format. Supported formats: terminal [default: terminal]      │
     │ --help                               Show this message and exit.                                         │
     ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
@@ -43,12 +42,12 @@
     | 4 | `193.64.33.192` | `/26` | `193.64.33.193` | `193.64.33.254` | `193.64.33.255` |
 
 ## Current features:
-- Subnet /24 notation IP address
+- Subnet /24-/32 notation IP address
 - Generate markdown tables of subnet information
 - ...
 
 ## Planned features:
-- Subnet other IP address notations e.g. /25, /16
+- Calculate supernetting data /23-/8 notation IP address
 - Export subnet information to files
 - ...
 

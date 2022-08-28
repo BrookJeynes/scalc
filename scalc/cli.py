@@ -13,7 +13,7 @@ app = typer.Typer(add_completion=False)
 def main(
   version: bool = typer.Option(None, '--version', '-v', help='Show version.', callback=_version_callback),
     ip_address: str = typer.Argument(..., help='IP address.'),
-      slash_notation: int = typer.Option(__settings__.default_settings['slash_notation'], '--slash-notation', '-sn', help='Slash notation.'),
+      slash_notation: int = typer.Option(__settings__.default_settings['slash_notation'], '--slash-notation', '-sn', help='Slash notation. Overrides --subnets.'),
         subnets: int = typer.Option(__settings__.default_settings['subnets'], '--subnets', '-s', help='Number of subnets.'),
           # host_id_bits: int = typer.Option(__settings__.default_settings['host_id_bits'], '--host-id-bits', '-hid', help='Number of host id bits.'),
             output_format: str = typer.Option(__settings__.output_settings['output_format'], '--output-format', '-of', help=f'Output format. Supported formats: {", ".join(__settings__.output_settings["supported_output_formats"])}'),

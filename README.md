@@ -1,6 +1,6 @@
-<p align="center">
-    <h1 align = "center">Command-line Subnetting Calculator - Created in Python!</h1>
-</p>
+<div align="center">
+    <h1 align="center">Command-line Subnetting Calculator - Created in Python!</h1>
+</div>
 <p align="center">
     Scalc is a simple command-line subnet calculator. It can be used to generate markdown tables of subnet information.
 </p>
@@ -27,7 +27,7 @@
     ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
     ╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────╮
     │ --version         -v                 Show version.                                                       │ 
-    │ --slash-notation  -sn       INTEGER  Slash notation. Overrides --subnets. [default: 24]           │
+    │ --slash-notation  -sn       INTEGER  Slash notation. Overrides --subnets. [default: 24]                  │
     │ --subnets         -s        INTEGER  Number of subnets. [default: 2]                                     │
     │ --output-format   -of       TEXT     Output format. Supported formats: terminal [default: terminal]      │
     │ --help                               Show this message and exit.                                         │

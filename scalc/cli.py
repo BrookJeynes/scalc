@@ -32,6 +32,8 @@ def main(
 
   subnets_needed: int = int(math.pow(2, borrowed_bits))
 
+  print(subnets)
+
   # TODO: Possibly move these to an error checking function?
   if output_format not in __settings__.output_settings['supported_output_formats']:
     raise typer.BadParameter('Unsupported output format.')
@@ -44,12 +46,13 @@ def main(
   if slash_notation < 24 or slash_notation > 32:
     raise typer.BadParameter('Slash notations smaller than 24 and greater than 32 are not yet supported / are invalid.')
   
-  for i in range(256+IP_address_per_subnet):
-    if i % IP_address_per_subnet == 0 and i - IP_address_per_subnet >= 0:
-      __settings__.output_table['Network Address'].append(f'`{ip_address[0:-1]}{i-IP_address_per_subnet}`')
-      __settings__.output_table['Slash Notation'].append(f'/{slash_notation}')
-      __settings__.output_table['First Usable IP Address'].append(f'`{ip_address[0:-1]}{int((i-IP_address_per_subnet)+1)}`')
-      __settings__.output_table['Last Usable IP Address'].append(f'`{ip_address[0:-1]}{int(i-2)}`')
-      __settings__.output_table['Broadcast Address'].append(f'`{ip_address[0:-1]}{int(i-1)}`')
+  if slash_notation >= 24:
+    for i in range(256+IP_address_per_subnet):
+      if i % IP_address_per_subnet == 0 and i - IP_address_per_subnet >= 0:
+        __settings__.output_table['Network Address'].append(f'`{ip_address[0:-1]}{i-IP_address_per_subnet}`')
+        __settings__.output_table['Slash Notation'].append(f'/{slash_notation}')
+        __settings__.output_table['First Usable IP Address'].append(f'`{ip_address[0:-1]}{int((i-IP_address_per_subnet)+1)}`')
+        __settings__.output_table['Last Usable IP Address'].append(f'`{ip_address[0:-1]}{int(i-2)}`')
+        __settings__.output_table['Broadcast Address'].append(f'`{ip_address[0:-1]}{int(i-1)}`')
 
   generate_table(subnets_needed)

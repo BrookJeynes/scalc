@@ -20,7 +20,13 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=["requests"],
+    install_requires=[
+        "requests",
+        "typer==0.6.1",
+        "pytest==7.1.2",
+        "pandas==1.4.3",
+        "tabulate==0.8.9"
+    ],
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
     entry_points={
@@ -28,4 +34,4 @@ setuptools.setup(
             "scalc = scalc.cli:app",
         ]
     }
-) 
+)  

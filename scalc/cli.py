@@ -32,8 +32,6 @@ def main(
 
   subnets_needed: int = int(math.pow(2, borrowed_bits))
 
-  print(subnets)
-
   # TODO: Possibly move these to an error checking function?
   if output_format not in __settings__.output_settings['supported_output_formats']:
     raise typer.BadParameter('Unsupported output format.')

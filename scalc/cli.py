@@ -48,6 +48,7 @@ def main(
     for i in range(256+IP_address_per_subnet):
       if i % IP_address_per_subnet == 0 and i - IP_address_per_subnet >= 0:
         __settings__.output_table['Network Address'].append(f'`{ip_address[0:-1]}{i-IP_address_per_subnet}`')
+        # TODO: Display the subnet mask in decimal format as well
         __settings__.output_table['Slash Notation'].append(f'/{slash_notation}')
         __settings__.output_table['First Usable IP Address'].append(f'`{ip_address[0:-1]}{int((i-IP_address_per_subnet)+1)}`')
         __settings__.output_table['Last Usable IP Address'].append(f'`{ip_address[0:-1]}{int(i-2)}`')

@@ -31,6 +31,10 @@ def main(
     slash_notation = slash_notation + borrowed_bits
 
   subnets_needed: int = int(math.pow(2, borrowed_bits))
+  subnet_mask_decimal = int('{:<08}'.format(f'{borrowed_bits*"1"}'), 2)
+
+  if subnet_mask_decimal == 0:
+    subnet_mask_decimal = 255
 
   # TODO: Possibly move these to an error checking function?
   if output_format not in __settings__.output_settings['supported_output_formats']:
@@ -43,13 +47,12 @@ def main(
 
   if slash_notation < 24 or slash_notation > 32:
     raise typer.BadParameter('Slash notations smaller than 24 and greater than 32 are not yet supported / are invalid.')
-  
+
   if slash_notation >= 24:
     for i in range(256+IP_address_per_subnet):
       if i % IP_address_per_subnet == 0 and i - IP_address_per_subnet >= 0:
         __settings__.output_table['Network Address'].append(f'`{ip_address[0:-1]}{i-IP_address_per_subnet}`')
-        # TODO: Display the subnet mask in decimal format as well
-        __settings__.output_table['Slash Notation'].append(f'/{slash_notation}')
+        __settings__.output_table['Subnet Mask'].append(f'`255.255.255.{subnet_mask_decimal}/{slash_notation}`')
         __settings__.output_table['First Usable IP Address'].append(f'`{ip_address[0:-1]}{int((i-IP_address_per_subnet)+1)}`')
         __settings__.output_table['Last Usable IP Address'].append(f'`{ip_address[0:-1]}{int(i-2)}`')
         __settings__.output_table['Broadcast Address'].append(f'`{ip_address[0:-1]}{int(i-1)}`')

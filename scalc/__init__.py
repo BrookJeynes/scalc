@@ -16,7 +16,7 @@ class Settings():
 
     self.output_table = {
       'Network Address': [],
-      'Slash Notation': [],
+      'Subnet Mask': [],
       'First Usable IP Address': [],
       'Last Usable IP Address': [],
       'Broadcast Address': [],

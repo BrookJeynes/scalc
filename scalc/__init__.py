@@ -8,7 +8,7 @@ class Settings():
     }
 
     self.output_settings = {
-      'supported_output_formats': ['terminal'], # TODO: Add more supported types: 'md', 'csv'
+      'supported_output_formats': ['terminal', 'tsv'], # TODO: Add more supported types: 'md', 'csv'
       'output_format': 'terminal',
       'output_file': 'output',
       'output_directory': './' # TODO: Let user choose directory
